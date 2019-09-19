@@ -1,0 +1,487 @@
+body{
+    background: #938982; /* Old browsers */
+    background: url('../img/bg.jpg');
+    background-size: cover;
+    height: 100vh;
+
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+
+.fresh-table{
+    margin-top: 45px;
+    box-shadow: -15px 27px 69px rgba(0,0,0,.30);
+    margin-bottom: 50px;
+}
+.fresh-table.full-screen-table{
+    margin-top: 0;
+}
+
+.description{
+    margin-top: 60px;
+    text-align: center;
+}
+.description-footer{
+    margin-bottom: 20px;    
+}
+
+.ct-heart{
+    color: #F74933;
+}
+.description-footer p{
+    text-align: center;
+    color: #eeeeee;
+    margin-top: 100px;
+}
+.description-footer a{
+    color: #FFFFFF;
+}
+
+.description-footer .social-area{
+    margin: 0 auto;
+}
+.description-footer > div{
+    display: inline-block;
+}
+
+h2{
+    font-size: 28px;
+}
+h1{
+    font-size: 38px;
+}
+h1 small{
+   color: #EEE;
+}
+/*          For demo purpose         */
+
+
+.fixed-plugin{
+    position: absolute;
+    top: 150px;
+    right: 0;
+    width: 64px;
+    background: rgba(0,0,0,.3);
+    z-index: 1031;
+    border-radius: 8px 0 0 8px;
+    text-align: center;
+}
+.fixed-plugin .fa-cog{
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 0 0 6px 6px;
+}
+.fixed-plugin .dropdown-menu{
+    right: 80px;
+    left: auto;
+    width: 260px;
+    border-radius: 10px;
+}
+.fixed-plugin .dropdown-menu:after, .fixed-plugin .dropdown-menu:before{
+    right: 10px;
+    margin-left: auto;
+    left: auto;
+}
+.fixed-plugin .fa-circle-thin{
+    color: #FFFFFF;
+}
+.fixed-plugin .active .fa-circle-thin{
+    color: #00bbff;
+}
+
+.footer-dropdown{
+	top: -120px !important;
+}
+
+.footer-dropdown:before, .footer-dropdown:after{
+	top: 300px !important;
+}
+
+.fixed-plugin .dropdown-menu > .active > a, 
+.fixed-plugin .dropdown-menu > .active > a:hover, 
+.fixed-plugin .dropdown-menu > .active > a:focus{
+    color: #777777;
+    text-align: center;
+}
+
+.fixed-plugin img{
+    border-radius: 6px;
+    width: 230px;
+    max-height: 175px;
+    margin: 0 auto;
+}
+
+.fixed-plugin .btn:hover{
+    color: #FFFFFF;
+}
+.fixed-plugin .badge{
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 23px;
+    margin-right: 5px;
+    position: relative;
+    width: 23px;
+}
+.fixed-plugin .badge.active, 
+.fixed-plugin .badge:hover{
+    border-color: #00bbff;
+}
+
+.fixed-plugin .badge-white{
+    background-color: #FFFFFF;
+}
+.fixed-plugin .badge-blue{
+    background-color: #4087ea;
+}
+.fixed-plugin .badge-azure{
+    background-color: #36AFEC;
+}
+.fixed-plugin .badge-green{
+    background-color: #53A319;
+}
+.fixed-plugin .badge-orange{
+    background-color: #ffb33b;
+}
+
+.fixed-plugin .badge-red{
+    background-color: #ED362C;
+}
+.fixed-plugin h5{
+    font-size: 14px;
+    margin: 10px;
+}
+.fixed-plugin .dropdown-menu li{
+    display: block;
+    padding: 5px 10px;
+}
+
+.fixed-plugin li.adjustments-line,
+.fixed-plugin li.header-title{
+    width: 100%;
+    height: 50px;
+    min-height: inherit;
+}
+
+.fixed-plugin li.header-title{
+    height: 30px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 15px;
+} 
+
+.fixed-plugin .adjustments-line p{
+    float: left;
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 1em;
+}
+.fixed-plugin .adjustments-line .switch{
+    float: right;
+}
+.fixed-plugin .dropdown-menu > li.adjustments-line > a{
+      padding-right: 0;
+      padding-left: 0;
+      border-bottom: 1px solid #ddd;
+      margin-left: 10px;
+      margin-right: 10px;
+}
+.fixed-plugin .dropdown-menu > li > a.img-holder{
+      font-size: 16px;
+      text-align: center;
+      border-radius: 10px;
+      background-color: #FFF;
+      border: 1px solid #e4e4e4;
+      padding-left: 0;
+      padding-right: 0; 
+      opacity: 1;
+      cursor: pointer;
+}
+
+.fixed-plugin .dropdown-menu > li > a.switch-trigger:hover,
+.fixed-plugin .dropdown-menu > li > a.switch-trigger:focus{
+    background-color: transparent;
+}
+.fixed-plugin .dropdown-menu > .active > a.img-holder, 
+.fixed-plugin .dropdown-menu > .active > a.img-holder{
+    border-color: #00bbff;
+    background-color: #FFFFFF;
+}
+
+.fixed-plugin .dropdown-menu > li > a img{
+    margin-top: auto;
+}
+
+.dropdown-menu > li > a:hover, 
+.dropdown-menu > li > a:focus{
+    opacity: 1;
+}
+
+
+/* ============================================================
+ * bootstrapSwitch v1.3 by Larentis Mattia @spiritualGuru
+ * http://www.larentis.eu/switch/
+ * ============================================================
+ * Licensed under the Apache License, Version 2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * ============================================================ */
+ 
+.has-switch {
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.72222;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  /*   this code is for fixing safari bug with hidden overflow for border-radius   */
+  -webkit-mask: url("../img/mask.png") 0 0 no-repeat;
+  -webkit-mask-size: 60px 24px;
+  mask: url("../img/mask.png") 0 0 no-repeat;
+}
+
+.has-switch.deactivate {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default !important;
+}
+
+.has-switch.deactivate label,
+.has-switch.deactivate span {
+  cursor: default !important;
+}
+
+.has-switch > div {
+  position: relative;
+  top: 0;
+  width: 100px;
+}
+
+.has-switch > div.switch-animate {
+  -webkit-transition: left 0.25s ease-out;
+  transition: left 0.25s ease-out;
+}
+
+.has-switch > div.switch-off {
+  left: -35px;
+}
+
+.has-switch > div.switch-on {
+  left: 0;
+}
+
+.has-switch > div label {
+  background-color: #FFFFFF;
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f1f1f2));
+  background: -webkit-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -o-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: -ms-linear-gradient(top, white 0%, #f1f1f2 100%);
+  background: linear-gradient(to bottom, white 0%, #f1f1f2 100%);
+  box-shadow: 0 1px 1px #FFFFFF inset, 0 1px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.has-switch input[type=checkbox] {
+  display: none;
+}
+
+.has-switch span {
+  /*     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; */
+  cursor: pointer;
+  float: left;
+  font-size: 11px;
+  font-weight: bold;
+  height: 24px;
+  line-height: 15px;
+  margin: 0;
+  padding-bottom: 6px;
+  padding-top: 5px;
+  position: relative;
+  text-align: center;
+  text-indent: -10px;
+  width: 50%;
+  z-index: 1;
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+.has-switch span.switch-left {
+  background-color: #474657;
+  border-left: 1px solid transparent;
+  border-radius: 30px 0 0 30px;
+  color: #FFFFFF;
+}
+
+.has-switch .switch-off span.switch-left {
+  background-color: #DDDDDD;
+}
+
+.has-switch span.switch-right {
+  border-radius: 0 30px 30px 0;
+  background-color: #474657;
+  color: #ffffff;
+  text-indent: 1px;
+}
+
+.has-switch .switch-off span.switch-right {
+  background-color: #DDDDDD;
+}
+
+.has-switch label {
+  border-radius: 12px;
+  float: left;
+  height: 22px;
+  margin: 1px -13px;
+  padding: 0;
+  position: relative;
+  transition: all 0.25s ease-out 0s;
+  vertical-align: middle;
+  width: 22px;
+  z-index: 100;
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+}
+
+.has-switch .switch-on .fa-check:before {
+  margin-left: 10px;
+}
+
+.has-switch:hover .switch-on label {
+  margin: 1px -17px;
+  width: 26px;
+}
+
+.has-switch:hover .switch-off label {
+  margin: 1px -13px;
+  width: 26px;
+}
+
+
+.logo-container{
+    left: 50px;
+    position: absolute;
+    top: 20px;
+     z-index: 3;
+}
+.logo-container.full-screen-table-demo{
+    left: 13px;
+    top: 10px;
+}
+
+.logo-container .logo{
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    width: 60px; 
+    float: left;
+}
+.logo-container .brand{
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial, sans-serif;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 60px
+}
+
+
+
+@media (min-width: 768px){
+    .dropdown .dropdown-menu{
+         -webkit-transform: translateY(-50%);
+         -moz-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+         -ms-transform: translateY(-50%);
+         transform: translateY(-50%);
+         top: 27px;
+         opacity: 0;
+         
+         transform-origin: 0 0;
+    }
+    .dropdown.open .dropdown-menu{
+         opacity: 1;
+         
+         -webkit-transform: translateY(-50%);
+         -moz-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+         -ms-transform: translateY(-50%);
+         transform: translateY(-50%);
+         
+         transform-origin: 0 0;
+    }
+    
+    .fixed-plugin .dropdown-menu:before,
+    .fixed-plugin .dropdown-menu:after{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        width: 16px;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        
+    }
+    .fixed-plugin .dropdown-menu:before{
+        border-bottom: 16px solid rgba(0, 0, 0, 0);
+        border-left: 16px solid rgba(0,0,0,0.2);
+        border-top: 16px solid rgba(0,0,0,0);
+        right: -16px;
+    }
+    
+    .fixed-plugin .dropdown-menu:after{
+        border-bottom: 16px solid rgba(0, 0, 0, 0);
+        border-left: 16px solid #FFFFFF;
+        border-top: 16px solid rgba(0,0,0,0);
+        right: -15px;
+    }
+      
+}
+
+@media (max-width: 767px){
+    .fixed-plugin .dropdown-menu{
+        right: 60px;
+        width: 220px;
+    }
+    .fixed-plugin .dropdown-menu li{
+        width: 100%;
+    }
+    .fixed-plugin .adjustments-line .switch{
+        float: left;
+        margin: 0 10px;
+    }
+    .fixed-plugin li.adjustments-line{
+        height: 80px;
+    }
+    .dropdown .dropdown-menu{
+        top: -100px;   
+    }
+    .fixed-plugin{
+        top: 80px;
+        right: 0px;
+    }
+    
+    fixed-plugin img {
+        max-width: 190px
+    }
+    
+    .description {
+        margin-top: 130px;
+    }
+}
+
+

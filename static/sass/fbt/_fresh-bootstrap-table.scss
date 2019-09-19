@@ -1,0 +1,394 @@
+.fresh-table{
+    background-color: $white-color;
+    border-radius: $border-radius-extreme;
+    color: $black-font;
+    
+    .btn{
+        border-radius: $btn-round-radius !important;
+    }
+    
+    a{
+        color: $default-color;
+        
+        &:hover,
+        &:focus{
+            color: $default-states-color;
+        }
+    } 
+    
+    input[type="radio"], 
+    input[type="checkbox"]{
+        margin: 4px 5px 0 0;
+    }
+    
+    .fixed-table-toolbar{
+        border-radius: $border-radius-extreme $border-radius-extreme 0 0;
+        padding: 10px 10px;
+        color: $black-font;
+        
+        .dropdown-menu{
+            overflow: visible;
+        }
+        
+        .pull-right{
+            .btn{
+                margin-right: 5px;
+            }    
+        }
+        
+        .pull-left{
+            .btn{
+                margin-left: 5px;
+            }
+        }
+    
+        .columns{
+            label{
+                padding: 4px 15px;
+                padding: 4px 15px;
+                color: #FFF;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 12px;
+            }
+            
+            ul > li:first-child{
+                label{
+                    padding-top: 10px;
+                }
+            }
+            
+            ul > li:last-child{
+                label{
+                    padding-bottom: 10px;
+                }
+            }
+        }   
+         
+        &:after{
+            display: table;
+            content: "";
+            clear: both;
+        }        
+    }
+    
+    &.toolbar-color-blue{
+        .fixed-table-toolbar{
+            @include card-radial-gradient ($icon-blue-color-top, $icon-blue-color-bottom); 
+        }     
+    }
+    
+    &.toolbar-color-azure{
+        .fixed-table-toolbar{
+            @include card-radial-gradient ($icon-azure-color-top, $icon-azure-color-bottom);    
+        }
+    }
+    
+    &.toolbar-color-green{
+        .fixed-table-toolbar{
+            @include card-radial-gradient ($icon-green-color-top, $icon-green-color-bottom);
+        }
+    }
+    &.toolbar-color-orange{
+        .fixed-table-toolbar{
+            @include card-radial-gradient ($icon-orange-color-top, $icon-orange-color-bottom);
+        }    
+    }
+    &.toolbar-color-red{
+        .fixed-table-toolbar{
+            @include card-radial-gradient ($icon-red-color-top, $icon-red-color-bottom); 
+        }
+    }
+
+    
+    .fixed-table-pagination{
+        margin: 0 10px;
+        
+        &:after{
+            display: table;
+            content: "";
+            clear: both;
+        }
+        
+        .dropup .dropdown-menu{
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+        
+        div.pagination,
+        .pagination-detail{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    }
+    
+    .bootstrap-table .table tbody > tr > td:first-child,{
+        padding-left: 18px !important;
+    }
+    
+    .bootstrap-table .table thead > tr > th:first-child{
+        padding-left: 10px !important;
+    }
+    
+    .table > thead > tr > th, 
+    .table > tbody > tr > th, 
+    .table > tfoot > tr > th{
+        border-color: $light-gray;
+    } 
+    
+    .table{
+        > thead > tr > td,
+        > tbody > tr >td,
+        > tfoot > tr >td{
+            border-color: rgba(220, 220, 220, 0.15);
+        } 
+        
+        &.table-striped > thead > tr > td,
+        &.table-striped > tbody > tr >td,
+        &.table-striped > tfoot > tr >td{
+            border: none;
+        }
+        
+    }
+    
+    .pagination > li > a, 
+    .pagination > li > span, 
+    .pagination > li:first-child > a, 
+    .pagination > li:first-child > span, 
+    .pagination > li:last-child > a, 
+    .pagination > li:last-child > span{
+        border-radius: 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        min-width: 36px;
+        height: 36px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 20px;
+        
+        border-width: 2px;
+        color: $default-color;
+        border-color: transparent;
+        
+        @include opacity(.7);
+        
+        &:hover{
+            color: $default-states-color;
+            border-color: $default-states-color;
+            @include opacity(1);
+        }
+    }
+    
+    .pagination > li.active > a, 
+    .pagination > li.active > span, 
+    .pagination > li.active > a:hover, 
+    .pagination > li.active > span:hover, 
+    .pagination > li.active > a:focus, 
+    .pagination > li.active > span:focus {
+        color: $default-states-color;
+        border-color: $default-color;
+        background-color: transparent;
+        @include opacity(1);
+    }
+        
+    &[class*="full-color-"],
+    &[class*="toolbar-color-"]{           
+        .table-hover > tbody > tr:hover {
+            background-color: rgba(255, 255, 255, .20);
+        }
+        
+        .fixed-table-toolbar{
+            .btn{
+                @include btn-styles($light-white, $white-states-color);
+            }
+        }
+        
+        .form-control{
+            border-color: $light-white;
+            background-color: transparent;
+            color: $white-color;
+            
+            &:focus{
+                border-color: $white-color;
+                background-color: rgba(255,255,255,.15);
+            }
+            
+            &::-moz-placeholder{
+               @include placeholder($light-white,1);
+            }
+            &:-moz-placeholder{
+               @include placeholder($light-white,1);
+            }  
+            &::-webkit-input-placeholder{
+               @include placeholder($light-white,1); 
+            } 
+            &:-ms-input-placeholder{
+               @include placeholder($light-white,1);
+            }        
+        }
+        
+    }
+    
+    &[class*="full-color-"]{ 
+        .table td{
+            a{
+                color: $light-white;
+                
+                &:hover,
+                &:focus{
+                    color: $white-color;
+                }
+            } 
+        }
+        
+        .btn{
+            @include btn-styles($light-white, $white-states-color);
+        }        
+          
+        .fixed-table-toolbar{
+            background: none !important;
+            border-color: rgba(255,255,255,.15);
+            color: $white-color;
+        } 
+        .fixed-table-header,
+        .fixed-table-body{
+            color: $white-color;
+        }
+         
+        .table-striped > tbody > tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, .15);
+            
+            &:hover{
+                background-color: rgba(255,255,255,.25);
+            }
+        }
+        
+        .table > thead > tr > th, 
+        .table > tbody > tr > th, 
+        .table > tfoot > tr > th{
+            border-color: rgba(255,255,255, .15);
+        } 
+        
+        .fixed-table-pagination{  
+                color: $white-color;
+            
+        }
+        
+        .pagination > li > a, 
+        .pagination > li > span, 
+        .pagination > li:first-child > a, 
+        .pagination > li:first-child > span, 
+        .pagination > li:last-child > a, 
+        .pagination > li:last-child > span{
+            color: $light-white;
+            
+            &:hover{
+                color: $white-color;
+                border-color: $light-white;
+                @include opacity(1);
+            }
+        }
+        
+        .pagination > li.active > a, 
+        .pagination > li.active > span, 
+        .pagination > li.active > a:hover, 
+        .pagination > li.active > span:hover, 
+        .pagination > li.active > a:focus, 
+        .pagination > li.active > span:focus {
+            color: $white-color;
+            border-color: $white-color;
+        }
+        
+        
+    }
+    
+    .fixed-table-container{
+        border: none;
+        
+        thead th{
+            border-left: 0;
+            
+            .th-inner{
+                padding: 20px 8px 0;
+            }
+        }
+        
+        tbody td{
+            border-left: 0;
+        }
+    }
+    
+    &.full-color-blue{
+        @include card-radial-gradient ($icon-blue-color-top, $icon-blue-color-bottom);         
+    }
+    
+    &.full-color-azure{
+        @include card-radial-gradient ($icon-azure-color-top, $icon-azure-color-bottom);
+    }
+    
+    &.full-color-green{
+        @include card-radial-gradient ($icon-green-color-top, $icon-green-color-bottom);
+    }
+    &.full-color-orange{
+        @include card-radial-gradient ($icon-orange-color-top, $icon-orange-color-bottom);
+    }
+    &.full-color-red{
+        @include card-radial-gradient ($icon-red-color-top, $icon-red-color-bottom);
+    }
+
+    
+    .table-action{
+        padding: 0 3px;
+    }
+    
+    .bootstrap-table{
+        
+       .table{
+           > thead > tr > th{
+               border-bottom-width: 1px;
+               font-size: 12px;
+               font-weight: $font-weight-bold;
+               text-transform: uppercase;
+           }  
+           
+           .radio,
+           .checkbox{
+               margin-top: 0;
+               margin-bottom: 0;
+               padding: 0;
+               width: 15px;
+           }
+           > tfoot > tr > th,
+           > thead > tr > td,
+           > tbody > tr > td,
+           > tfoot > tr > td{
+               padding: 12px 8px !important;
+               vertical-align: middle;
+           }
+        
+            
+            > tbody > tr{
+                position: relative;
+                
+                &:hover{
+                    .td-actions .btn{
+                        @include opacity(1);
+                    }
+                }
+            }
+        } 
+    }    
+    
+    &.full-screen-table{
+        border-radius: 0;
+        
+        .fixed-table-toolbar{
+            border-radius: 0;
+        }
+    }
+    
+    .fa{
+        min-width: 18px;
+    }
+    
+}

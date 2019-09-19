@@ -1,0 +1,61 @@
+/*     General overwrite     */
+.freshbt-unique-ct{
+    display: block;
+    padding: 10px;
+    margin-top: auto;
+}
+
+a{
+  color: $info-color;
+    
+  &:hover, &:focus{
+     color: $info-states-color; 
+     text-decoration: none; 
+  }
+}
+
+a:focus, a:active, 
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    outline : 0 !important;
+}
+.ui-slider-handle:focus,
+.navbar-toggle {
+    outline : 0 !important;
+}
+
+/*           Animations              */
+.form-control, 
+.input-group-addon, 
+.tagsinput,
+.navbar,
+.navbar .alert{
+    @include transition($general-transition-time, linear);
+}
+.tagsinput .tag,
+.tagsinput-remove-link,
+.filter,
+.btn-hover,
+[data-toggle="collapse"] i,
+.btn,
+.pagination > li > a, 
+.pagination > li > span{
+    @include transition($fast-transition-time, linear);
+}
+ 
+.btn-morphing .fa,
+.btn-morphing .circle,
+.gsdk-collapse{
+    @include transition($slow-transition-time, linear);
+}
+
+.fa{
+    text-align: center;
+}
+.margin-top{
+    margin-top: 50px;
+}

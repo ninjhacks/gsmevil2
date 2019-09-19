@@ -1,0 +1,102 @@
+.fresh-table{    
+    .dropdown-menu{
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+        border-radius: $border-radius-extreme;
+        display: block;
+        z-index: 9000;
+        position: absolute;
+        border: none;
+        background-color: rgba(23, 23, 23, 0.82);
+        
+        margin-top: 10px;
+        
+        @include opacity(0); 
+        @include box-shadow(none);   
+        
+        > li > a {
+           padding: $padding-base-vertical $padding-base-horizontal;
+           color: #FFFFFF;
+           
+           img{
+               margin-top: -3px;
+           }
+        }
+        
+        > li > a:focus{
+            outline: 0 !important;
+        }
+        
+        > li:first-child > a{
+           border-top-left-radius: $border-radius-extreme;
+           border-top-right-radius: $border-radius-extreme;
+        }
+        
+        > li:last-child > a{
+            border-bottom-left-radius: $border-radius-extreme;
+            border-bottom-right-radius: $border-radius-extreme;
+        }
+        
+        > li > a:hover,
+        > li > a:focus {
+            background-color: rgba(0,0,0,.35);
+            color: #FFFFFF;
+            opacity: 1;
+            text-decoration: none;
+        }
+        
+        > li.active > a,
+        > li.active > a:hover,
+        > li.active > a:focus{
+            background-color: rgba(0,0,0,.6);
+        }
+    
+        @include transform-scale(0);
+        @include transition($slow-transition-time, $transition-bezier);
+    
+        
+        
+        &:after {
+            border-bottom: 11px solid rgba(23, 23, 23, 0.73);
+            border-left: 11px solid rgba(0, 0, 0, 0);
+            border-right: 11px solid rgba(0, 0, 0, 0);
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 12px;
+            top: -11px;
+        }
+    
+    }  
+      
+    .dropup .dropdown-menu{
+        &:after {
+            border-top: 11px solid rgba(23, 23, 23, 0.73);
+            border-left: 11px solid rgba(0, 0, 0, 0);
+            border-right: 11px solid rgba(0, 0, 0, 0);
+            border-bottom: none;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 12px;
+            right: auto;
+            top: auto;
+            bottom: -11px;
+        }
+
+    }
+    
+    .open{
+        .dropdown-menu{
+            
+            
+            @include opacity(1);
+            visibility: visible;
+             
+            @include transform-scale(1);
+            @include transform-origin($dropdown-coordinates);
+        }       
+    }
+    
+}

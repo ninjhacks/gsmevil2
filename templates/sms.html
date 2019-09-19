@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='./img/favicon.ico') }}">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>GSM EVIL 2</title>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    
+	<link href="{{ url_for('static', filename='./css/bootstrap.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='./css/fresh-bootstrap-table.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='./css/demo.css') }}" rel="stylesheet">
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/bootstrap.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='./js/bootstrap-table.js') }}"></script>
+	<script src="{{ url_for('static', filename='./js/socket.io.js') }}"></script>
+
+    <!--  Just for demo purpose, do not include in your project     -->
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/demo/gsdk-switch.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/demo/jquery.sharrre.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='./js/demo/demo.js') }}"></script>
+
+</head>
+<body>
+<div class="wrapper">
+     <!--   Creative Tim Branding   -->
+    <a href="/">
+         <div class="logo-container full-screen-table-demo">
+            <div class="logo" style="border:0px;overflow: visible;">
+                <img style="height: 60px;" src="{{ url_for('static', filename='./img/logo_small_t.png') }}">
+            </div>
+            <div class="brand" style="margin-top: 20px;margin-left: 0px;">
+                GSMEVIL
+            </div>
+        </div>
+    </a>
+
+    <div class="fresh-table full-color-orange full-screen-table" style="margin: 0%;background: radial-gradient(ellipse at center, #323049 0%, #212030 100%);">
+        <table id="fresh-table" class="table" data-sort-name="id" data-sort-order="desc">
+            <thead>
+                <th data-field="id" data-sortable="true">ID</th>
+            	<th data-field="sender" data-sortable="true">Sender</th>
+                <th data-field="recevier" data-sortable="true">Recevier</th>
+                <th data-field="text" data-sortable="true">Text</th>
+            	<th data-field="time">Time</th>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="fixed-plugin" style="top: 300px">
+    <div class="dropdown open">
+        <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+        </a>
+        <ul class="dropdown-menu">
+			<li class="header-title">Setting</li>
+            <li class="adjustments-line">
+                <a href="javascript:void(0)" class="switch-trigger">
+                    <p>Full Background</p>
+                    <div class="switch"
+                        data-on-label="ON"
+                        data-off-label="OFF">
+                        <input type="checkbox" checked data-target="section-header" data-type="parallax"/>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+			</li>
+			<li class="adjustments-line">
+                <a href="javascript:void(0)" class="switch-trigger">
+                    <p>SMS Sniffer</p>
+                    <div class="switch"
+                        data-on-label="ON"
+                        data-off-label="OFF">
+                        <input id="sms_sniffer" type="checkbox" data-target="section-header" data-type="parallax"/>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li class="adjustments-line">
+                <a href="javascript:void(0)" class="switch-trigger">
+                    <p>IMSI Sniffer</p>
+                    <div class="switch"
+                        data-on-label="ON"
+                        data-off-label="OFF">
+                        <input id="imsi_sniffer" type="checkbox" data-target="section-header" data-type="parallax"/>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li>
+                <div class="">
+                    <a href="/imsi" target="_blank" class="btn btn-info btn-block btn-fill">IMSI Sniffer</a>
+                </div>
+            </li>
+            <li>
+                <div class="">
+                    <a href="/sms" target="_blank" class="btn btn-default btn-block btn-fill">SMS Sniffer</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+    <script type="text/javascript">
+        var $table = $('#fresh-table'),
+            $alertBtn = $('#alertBtn'),
+            full_screen = false,
+            window_height;
+
+        $().ready(function(){
+
+            window_height = $(window).height();
+            table_height = window_height - 20;
+
+
+            $table.bootstrapTable({
+                toolbar: ".toolbar",
+
+                showRefresh: true,
+                search: true,
+                showToggle: true,
+                showColumns: true,
+                pagination: true,
+                striped: true,
+                sortable: true,
+                height: table_height,
+                pageSize: 25,
+                pageList: [25,50,100],
+
+                formatShowingRows: function(pageFrom, pageTo, totalRows){
+                    //do nothing here, we don't want to show the text "showing x of y from..."
+                },
+                formatRecordsPerPage: function(pageNumber){
+                    return pageNumber + " rows visible";
+                },
+                icons: {
+                    refresh: 'fa fa-refresh',
+                    toggle: 'fa fa-th-list',
+                    columns: 'fa fa-columns',
+                    detailOpen: 'fa fa-plus-circle',
+                    detailClose: 'fa fa-minus-circle'
+                }
+            });
+
+            $(window).resize(function () {
+                $table.bootstrapTable('resetView');
+            });
+        });
+    </script>
+
+	<script type="text/javascript" charset="utf-8">
+		var socket = io();
+        socket.emit('sms_data', 'get')
+        socket.on('sniffers', msg => sniffer_switch(msg))
+        socket.on('sms_data', msg => msg.forEach(msg => add_data(msg)))
+		socket.on('sms', msg => add_data(msg))
+
+        function add_data(msg){
+            var row = {
+                id: msg[0],
+                text: msg[1],
+                sender: msg[2],
+                recevier: msg[3],        
+                time: msg[4]
+			};
+			$('#fresh-table').bootstrapTable('prepend', row);
+        }
+
+        function sniffer_switch(msg){
+            if(msg.imsi_sniffer == 'on' && $('#imsi_sniffer').prop('checked') != true){
+                $('#imsi_sniffer').prop("checked", true).change();
+            }else if(msg.imsi_sniffer == 'off' && $('#imsi_sniffer').prop('checked') == true){
+                $('#imsi_sniffer').prop("checked", false).change();
+            }
+            
+            if(msg.sms_sniffer ==  'on' && $('#sms_sniffer').prop('checked') != true){
+                $('#sms_sniffer').prop("checked", true).change();
+            }else if(msg.sms_sniffer ==  'off' && $('#sms_sniffer').prop('checked') == true){
+                $('#sms_sniffer').prop("checked", false).change();
+            }
+        }
+
+        $().ready(function(){
+            $('#imsi_sniffer').change(function(){
+                if($input.is(':checked')){
+                    socket.emit('imsi_sniffer', 'on')
+                }else{
+                    socket.emit('imsi_sniffer', 'off')
+                }
+            });
+
+            $('#sms_sniffer').change(function(){
+                if($input.is(':checked')){
+                    socket.emit('sms_sniffer', 'on')
+                }else{
+                    socket.emit('sms_sniffer', 'off')
+                }
+            });
+        });
+	</script>
+</html>
