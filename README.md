@@ -104,13 +104,13 @@ linux operating system (kali linux)
 [rtl-sdr (RTL2832U)](https://osmocom.org/projects/sdr/wiki/rtl-sdr) with antenna (less than 15$) or [HackRF](https://greatscottgadgets.com/hackrf/) 
 
 # Links 
-Frequency : https://www.worldtimezone.com/gsm.html or https://en.wikipedia.org/wiki/GSM_frequency_bands
-Sdr : https://en.wikipedia.org/wiki/Software-defined_radio
-Sms : https://en.wikipedia.org/wiki/SMS#GSM
-Imsi : https://fr.wikipedia.org/wiki/International_Mobile_Subscriber_Identity
-Cell id : https://en.wikipedia.org/wiki/Cell_ID or https://unwiredlabs.com/
-GSM : https://en.wikipedia.org/wiki/GSM
-Frequency Calculator : https://www.cellmapper.net/arfcn
+Frequency : https://www.worldtimezone.com/gsm.html or https://en.wikipedia.org/wiki/GSM_frequency_bands  
+Sdr : https://en.wikipedia.org/wiki/Software-defined_radio  
+Sms : https://en.wikipedia.org/wiki/SMS#GSM  
+Imsi : https://fr.wikipedia.org/wiki/International_Mobile_Subscriber_Identity  
+Cell id : https://en.wikipedia.org/wiki/Cell_ID or https://unwiredlabs.com/  
+GSM : https://en.wikipedia.org/wiki/GSM  
+Frequency Calculator : https://www.cellmapper.net/arfcn  
 GR-GSM : https://github.com/ptrkrysik/gr-gsm 
 
 # Donations
