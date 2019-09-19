@@ -134,7 +134,7 @@ class ImsiEvil:
                 lac = int(gsm_a_ccch.gsm_a_lac, 16)
     
     def output(self):
-        data = {'id' : str(imsi_live_db[self.imsi]["id"]), 'imsi' : self.imsi, 'tmsi' : imsi_live_db[self.imsi]["tmsi"], 'mnc' : self.mnc, 'mcc' : self.mcc, 'lac' : lac, 'ci' : ci, 'time' : datetime.now().strftime("%H:%M:%S %Y-%m-%d")}
+        data = {0 : str(imsi_live_db[self.imsi]["id"]), 1 : self.imsi, 2 : imsi_live_db[self.imsi]["tmsi"], 3 : self.mcc, 4 : self.mnc, 5 : lac, 6 : ci, 7 : datetime.now().strftime("%H:%M:%S %Y-%m-%d")}
         print(data)
         socketio.emit('imsi',data)
         print("\033[0;37;48m {:3s}\033[0;31;48m; \033[0;37;48m {:16s} \033[0;31;48m; \033[0;37;48m {:12s}\033[0;31;48m; \033[0;37;48m\033[0;37;48m  {:5s} \033[0;31;48m;\033[0;37;48m   {:4s}\033[0;31;48m; \033[0;37;48m {:5}  \033[0;31;48m; \033[0;37;48m {:6}   \033[0;31;48m;".format(str(imsi_live_db[self.imsi]["id"]), self.imsi, imsi_live_db[self.imsi]["tmsi"], self.mcc, self.mnc, lac, ci))
@@ -162,7 +162,8 @@ class SmsEvil:
     def output(self):
         self.sql_db() 
         self.save_data()
-        data = {self.sms_id, self.text, self.sender, self.receiver, datetime.now().strftime("%H:%M:%S %Y-%m-%d")}
+        data = {0 : self.sms_id, 1 : self.text, 2 : self.sender, 3 : self.receiver, 4 : datetime.now().strftime("%H:%M:%S %Y-%m-%d")}
+        print(data)
         socketio.emit('sms', data)
 
     def get_sms(self, packet):
@@ -234,12 +235,12 @@ def imsi():
 @socketio.on('sms_sniffer')
 def handel_sms_event(json):
     global gsm_sniffer, sms_sniffer
-    if json == "on":
+    if json == "on" and sms_sniffer != "on":
         sms_sniffer = "on"
         print("sms sniffer started")
         if gsm_sniffer == 'off':
             gsm_sniffer = "on"
-    else:
+    elif json == "off" and sms_sniffer != "off":
         sms_sniffer = "off"
         print("sms sniffer stoped")
     socketio.emit('sniffers', {'imsi_sniffer' : imsi_sniffer, 'sms_sniffer' : sms_sniffer})
@@ -248,12 +249,12 @@ def handel_sms_event(json):
 @socketio.on('imsi_sniffer')
 def handel_imsi_event(json):
     global gsm_sniffer, imsi_sniffer
-    if json == "on":
+    if json == "on" and imsi_sniffer != "on":
         imsi_sniffer = "on"
         print('imsi sniffer started')
         if gsm_sniffer == "off":
             gsm_sniffer = "on"
-    else:
+    elif json == "off" and imsi_sniffer != "off":
         imsi_sniffer = "off"
         print('imsi sniffer stoped')
     socketio.emit('sniffers', {'imsi_sniffer' : imsi_sniffer, 'sms_sniffer' : sms_sniffer})
