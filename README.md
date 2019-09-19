@@ -117,7 +117,7 @@ GR-GSM : https://github.com/ptrkrysik/gr-gsm
 Bitcoin : 17i3fuRvPB6RyugCwFW79zvGoZdNTjyQxJ
 
 # Contact
-Youtube : https://www.youtube.com/DigitalHackerOfficial
-Email : digitalhacker07@gmail.com
-Facebook : https://www.facebook.com/DigitalHackerOfficial
-Twitter : @SheryarNinjhack
+Youtube : https://www.youtube.com/DigitalHackerOfficial  
+Email : digitalhacker07@gmail.com  
+Facebook : https://www.facebook.com/DigitalHackerOfficial  
+Twitter : https://twitter.com/SheryarNinjhack 
