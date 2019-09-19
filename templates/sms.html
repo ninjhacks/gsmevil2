@@ -181,7 +181,7 @@
 
         $().ready(function(){
             $('#imsi_sniffer').change(function(){
-                if($input.is(':checked')){
+                if($(this).is(':checked')){
                     socket.emit('imsi_sniffer', 'on')
                 }else{
                     socket.emit('imsi_sniffer', 'off')
@@ -189,7 +189,7 @@
             });
 
             $('#sms_sniffer').change(function(){
-                if($input.is(':checked')){
+                if($(this).is(':checked')){
                     socket.emit('sms_sniffer', 'on')
                 }else{
                     socket.emit('sms_sniffer', 'off')
