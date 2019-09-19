@@ -3,7 +3,7 @@
     <img alt="GSMEVIL 2 Title" src="https://raw.githubusercontent.com/sharyer/gsmevil2/master/img/logo.png" style="max-width:100%;max-height:100%;" />
   </p>
 
-**GSMEVIL** is python web based tool which use for capturing imsi numbers and sms and also you able to see sms and imsi on any device using your favorite browser and it's make easy to capture sms and imsi numbers for those who not have much knowledge about gsm packets capturing.
+**GSMEVIL 2** is python web based tool which use for capturing imsi numbers and sms and also you able to see sms and imsi on any device using your favorite browser and it's make easy to capture sms and imsi numbers for those who not have much knowledge about gsm packets capturing.
 
 # Disclaimer:-
 This program was made to understand how GSM network works. Not for bad hacking !
@@ -73,7 +73,7 @@ You able to run imsi catcher and sms sniffer both at same time using 2 seprate t
 ```
 cd <your gsmevil2 folder> #Example cd gsmevil2
 ```
-#### Capturing IMSI :
+#### Usage :
 
 Run this command to quick start Gsm Evil 2.
 ```
@@ -98,6 +98,7 @@ For change hostname.
 ```
 python3 GsmEvil.py --host=localhost
 ```
+Open localhost or 127.0.0.1 in your favorite browser and use now.
 
 # Requirements
 linux operating system (kali linux)
