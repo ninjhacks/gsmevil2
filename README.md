@@ -14,7 +14,7 @@ We are not responsible for any illegal activity !
 Install GSMEvil :
 ```
 git clone https://github.com/sharyer/gsmevil2.git
-pip3 install pyshark flask flask_socketio logging sqlite3
+pip3 install pyshark flask flask_socketio sqlite3
 ```
 
 Install Gr GSM :  ( For receiving GSM transmissions )
