@@ -14,7 +14,7 @@ We are not responsible for any illegal activity !
 Install GSMEvil :
 ```
 git clone https://github.com/sharyer/gsmevil2.git
-pip3 install pyshark flask flask_socketio sqlite3
+pip3 install -r requirements.txt
 ```
 
 Install Gr GSM :  ( For receiving GSM transmissions )
@@ -115,10 +115,11 @@ Frequency Calculator : https://www.cellmapper.net/arfcn
 GR-GSM : https://github.com/ptrkrysik/gr-gsm 
 
 # Donations
-Bitcoin : 17i3fuRvPB6RyugCwFW79zvGoZdNTjyQxJ
+Bitcoin : 192bG3RRAGdbTPSUWqxbTBaAnKyvALm84g
 
 # Contact
 Website  : https://www.ninjhacks.com<br/>
 Facebook : https://www.facebook.com/ninjhacks<br/>
 Twitter  : https://twitter.com/ninjhacks<br/>
+Discord  : https://discord.gg/ninjhacks<br/>
 Email    : help@ninjhacks.com

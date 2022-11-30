@@ -193,7 +193,7 @@ def header():
 
 About:-
 Author: sheryar (ninjhacks)
-Version : 2.0.0
+Version : 2.1.0
 
 Disclaimer:-
 This program was made to understand how GSM network works.
