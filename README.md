@@ -191,5 +191,5 @@ Bitcoin : `192bG3RRAGdbTPSUWqxbTBaAnKyvALm84g`
 | Website  | https://www.ninjhacks.com
 | Facebook | https://www.facebook.com/ninjhacks
 | Twitter  | https://twitter.com/ninjhacks
-| Discord  | https://discord.gg/ninjhacks<br/>
+| Discord  | https://discord.gg/ninjhacks
 | Email    | help@ninjhacks.com
