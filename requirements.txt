@@ -1,3 +1,4 @@
 flask==2.2.2
 flask_socketio==5.3.2
 pyshark==0.5.3
+Werkzeug==2.2.2
