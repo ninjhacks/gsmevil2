@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="GSMEVIL 2 Title" src="https://raw.githubusercontent.com/sharyer/gsmevil2/master/img/logo.png" style="max-width:100%;max-height:100%;" />
+  <img alt="GSMEVIL 2 Title" src="https://raw.githubusercontent.com/ninjhacks/gsmevil2/master/img/logo.png" style="max-width:100%;max-height:100%;" />
 </p>
 
 **GSMEVIL 2** is python web-based tool which use for capturing IMSI numbers and SMS and also you able to see SMS and IMSI on any device using your favorite browser and it's make easy to capture SMS and IMSI numbers for those who not have much knowledge about GSM packets capturing.
@@ -16,7 +16,7 @@ We are not responsible for any illegal activity!
 1. Clone this repository and go into it:
 
     ```shell
-    $ git clone https://github.com/sharyer/gsmevil2.git
+    $ git clone https://github.com/ninjhacks/gsmevil2.git
     $ cd gsmevil2
     ```
 	
@@ -191,5 +191,5 @@ Bitcoin : `192bG3RRAGdbTPSUWqxbTBaAnKyvALm84g`
 | Website  | https://www.ninjhacks.com
 | Facebook | https://www.facebook.com/ninjhacks
 | Twitter  | https://twitter.com/ninjhacks
-| Discord  | https://discord.gg/ninjhacks
+| Discord  | https://discord.com/invite/uWXmV5wcg6
 | Email    | help@ninjhacks.com
